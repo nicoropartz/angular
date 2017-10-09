@@ -26,4 +26,8 @@ export class HeroListComponent implements OnInit{
     this.change.emit(hero);
     this.selectHero = hero;
   };
+
+  onDeletehero(hero : Hero) : void {
+    this.heroTab = this.heroTab.filter(h => h != hero);
+  }
 }

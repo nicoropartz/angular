@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import {Hero} from '../hero';
 
 @Component({
@@ -9,4 +9,10 @@ import {Hero} from '../hero';
 
 export class HeroDetailComponent  {
   @Input() hero : Hero;
+  @Output()
+  deleteHero : EventEmitter<Hero> = new EventEmitter<Hero>();
+
+  onDeleteHero() : void {
+    this.deleteHero.emit(this.hero);
+  }
 }

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
 
+import {AmexioWidgetModule, CommonHttpService} from 'amexio-ng-extensions';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +17,7 @@ import { HeroListComponent } from './hero-list/hero-list.component';
   imports: [
     BrowserModule,
     FormsModule,
+    AmexioWidgetModule
   ],
   providers: [],
   bootstrap: [AppComponent]

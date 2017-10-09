@@ -1,0 +1,32 @@
+{
+    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+    // Pointez pour afficher la description des attributs existants.
+    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Angular Client",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:4200",
+            "runtimeArgs": [
+              "--user-data-dir",
+              "--remote-debugging-port=9222"
+              ],
+              "sourceMaps": true,
+              "trace": true,
+              "webRoot": "${workspaceRoot}/client/",
+              "userDataDir": "${workspaceRoot}/.vscode/chrome"
+          },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/src\\app\\app.component.ts",
+            "preLaunchTask": "tsc: build - tsconfig.json",
+            "outFiles": [
+                "${workspaceFolder}/dist/out-tsc/**/*.js"
+            ]
+        }
+    ]
+}

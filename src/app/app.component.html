@@ -5,5 +5,5 @@
   </div>
   
   <ng-template #detailHero>
-      <hero-detail [hero]="selectHero"></hero-detail>
+      <hero-detail [hero]="selectHero" (deleteHero)="onDeleteHero($event)"></hero-detail>
   </ng-template>

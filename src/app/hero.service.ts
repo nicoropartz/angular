@@ -15,4 +15,9 @@ export class HeroService {
       setTimeout(() => resolve(this.getHeroes()), 2000);
     });
   }
+
+  deleteOneHeroes() : Promise<Hero[]> {
+    return null;
+  }
+
 }

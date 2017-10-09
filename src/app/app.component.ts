@@ -11,9 +11,13 @@ import {HeroDetailComponent} from './hero-detail/hero-detail.component';
 
 export class AppComponent {
   selectHero : Hero;
+  @ViewChild(HeroListComponent) listHero : HeroListComponent;
 
   selectHeroChange(event) {
     this.selectHero = event;
   }
 
+  onDeleteHero(event) {
+    this.listHero.onDeletehero(this.selectHero);
+  }
 }
