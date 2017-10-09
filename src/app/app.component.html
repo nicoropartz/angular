@@ -1,0 +1,9 @@
+  
+  <app-hero-list (change)="selectHeroChange($event)"></app-hero-list>
+
+  <div *ngIf="selectHero; then detailHero">
+  </div>
+  
+  <ng-template #detailHero>
+      <hero-detail [hero]="selectHero"></hero-detail>
+  </ng-template>
