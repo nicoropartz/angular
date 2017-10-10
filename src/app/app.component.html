@@ -1,9 +1,26 @@
   
-  <app-hero-list (change)="selectHeroChange($event)"></app-hero-list>
+  <amexio-tab-pane [closable]="false">
+    <amexio-tab title="Incident" [active]=true>
+      <div class="conteneurIncident">
+        <div class="ligne">
+            <app-liste-ligne [listAlert]="listAlert" (changeLigne)="changeLigne($event)"></app-liste-ligne>
+        </div>
 
-  <div *ngIf="selectHero; then detailHero">
-  </div>
-  
-  <ng-template #detailHero>
-      <hero-detail [hero]="selectHero" (deleteHero)="onDeleteHero($event)"></hero-detail>
-  </ng-template>
+        <div class="content">
+            <app-alert-trafic-list  class="contentlistincident" [selectLigne]="selectLigne" (loadListAlert)="loadListAlert($event)" (changeAlert)="changeAlert($event)"></app-alert-trafic-list>
+            <app-alert-trafic-detail class="contentdetail"  [selectAlertTrafic]="selectAlert"></app-alert-trafic-detail>
+        </div>
+
+        <br/>
+        <div class="footer" *ngIf="selectLigne">
+              <b>{{selectLigne.nomlong}}</b>
+          </div>
+      </div>
+    </amexio-tab>
+
+    <amexio-tab title="Recherche">
+        test
+    </amexio-tab>    
+
+  </amexio-tab-pane>
+

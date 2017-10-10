@@ -1,0 +1,13 @@
+li { 
+    cursor: pointer;
+    padding : 0 0.5em; /* Pour espacer les boutons entre eux */
+    margin: .5em;
+    display : inline-block;
+}
+
+ul {
+    float: left;
+    text-align: center;
+    width: 70%;
+    list-style-type : none; /* Car sinon les puces se placent n'importe où */
+}

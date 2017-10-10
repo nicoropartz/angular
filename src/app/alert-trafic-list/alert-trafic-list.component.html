@@ -1,0 +1,5 @@
+<ul class="alert">
+    <li *ngFor="let alert of alertTrafic | filterTrafic : _selectLigne" (click)="onSelectAlert(alert)" [class.selected]="alert === selectAlert">
+         {{alert.titre}} - {{alert.nomcourtligne}}
+    </li>
+</ul>

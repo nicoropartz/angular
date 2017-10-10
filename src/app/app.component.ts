@@ -1,7 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import {Hero} from './hero';
-import {HeroListComponent} from './hero-list/hero-list.component';
-import {HeroDetailComponent} from './hero-detail/hero-detail.component';
+import {AlertTraficListComponent} from './alert-trafic-list/alert-trafic-list.component';
+import {AlertTrafic} from './model/AlertTrafic';
+import {Ligne} from './model/Ligne';
+import {TraficMapComponent} from './trafic-map/trafic-map.component';
+import {ListeLigneComponent} from './liste-ligne/liste-ligne.component';
 
 @Component({ 
   selector: 'app-root',
@@ -10,14 +12,19 @@ import {HeroDetailComponent} from './hero-detail/hero-detail.component';
 })
 
 export class AppComponent {
-  selectHero : Hero;
-  @ViewChild(HeroListComponent) listHero : HeroListComponent;
+  selectAlert : AlertTrafic; 
+  selectLigne : Ligne;
+  listAlert : AlertTrafic[];
 
-  selectHeroChange(event) {
-    this.selectHero = event;
+  loadListAlert(event) : void {
+    this.listAlert = event;
   }
 
-  onDeleteHero(event) {
-    this.listHero.onDeletehero(this.selectHero);
+  changeAlert(event) : void {
+    this.selectAlert = event;
+  }
+
+  changeLigne(event) : void {
+    this.selectLigne = event;
   }
 }

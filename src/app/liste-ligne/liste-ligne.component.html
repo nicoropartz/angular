@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let ligne of listeLigne | filterPipe:listAlert" [style.backgroundColor]="ligne.couleurligne" [style.color]="ligne.couleurtexteligne" (click)="onSelectLigne(ligne)">
+        <span> {{ligne.nomcourt}} </span>
+    </li>
+</ul>

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeroListComponent } from './hero-list.component';
+import { TraficMapComponent } from './trafic-map.component';
 
-describe('HeroListComponent', () => {
-  let component: HeroListComponent;
-  let fixture: ComponentFixture<HeroListComponent>;
+describe('TraficMapComponent', () => {
+  let component: TraficMapComponent;
+  let fixture: ComponentFixture<TraficMapComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeroListComponent ]
+      declarations: [ TraficMapComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeroListComponent);
+    fixture = TestBed.createComponent(TraficMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
