@@ -14,6 +14,8 @@ import { AlertTraficDetailComponent } from './alert-trafic-detail/alert-trafic-d
 import { TraficMapComponent } from './trafic-map/trafic-map.component';
 import { ListeLigneComponent } from './liste-ligne/liste-ligne.component';
 import { RechercheComponent } from './recherche/recherche.component';
+import { LigneControlComponent } from './ligne-control/ligne-control.component';
+import { LigneDetailComponent } from './ligne-detail/ligne-detail.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { RechercheComponent } from './recherche/recherche.component';
     AlertTraficDetailComponent,
     TraficMapComponent,
     ListeLigneComponent,
-    RechercheComponent
+    RechercheComponent,
+    LigneControlComponent,
+    LigneDetailComponent
   ],
   imports: [
     BrowserModule,

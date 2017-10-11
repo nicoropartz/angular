@@ -4,6 +4,8 @@ import {AlertTrafic} from './model/AlertTrafic';
 import {Ligne} from './model/Ligne';
 import {TraficMapComponent} from './trafic-map/trafic-map.component';
 import {ListeLigneComponent} from './liste-ligne/liste-ligne.component';
+import {LigneControlComponent} from './ligne-control/ligne-control.component';
+
 
 @Component({ 
   selector: 'app-root',

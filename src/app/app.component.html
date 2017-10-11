@@ -3,7 +3,7 @@
     <amexio-tab title="Incident" [active]=true>
       <div class="conteneurIncident">
         <div class="ligne">
-            <app-liste-ligne [listAlert]="listAlert" (changeLigne)="changeLigne($event)"></app-liste-ligne>
+            <app-liste-ligne [listAlert]="listAlert" (changeLigne)="changeLigne($event)" #listeligne></app-liste-ligne>
         </div>
 
         <div class="content">
@@ -14,12 +14,13 @@
         <br/>
         <div class="footer" *ngIf="selectLigne">
               <b>{{selectLigne.nomlong}}</b>
-          </div>
+              <button text="test" (click)="listeligne.clickWithReference()">test</button>
+         </div>
       </div>
     </amexio-tab>
 
     <amexio-tab title="Recherche">
-        test
+      <app-ligne-control></app-ligne-control>
     </amexio-tab>    
 
   </amexio-tab-pane>

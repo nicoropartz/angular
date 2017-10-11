@@ -1,0 +1,9 @@
+<button [disabled]="allStop" (click)="stopAll()"> Stop All</button>
+<button [disabled]="allStart" (click)="startAll()"> Start All</button>
+
+<div>
+  Nombre Start = {{nbrStart}} -  Nombre stop = {{nbrStop}}
+</div>
+
+<app-ligne-detail *ngFor="let ligne of ligneUnderControl" [numeroLigne]="ligne">
+</app-ligne-detail>
