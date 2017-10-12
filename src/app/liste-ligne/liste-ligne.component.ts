@@ -3,8 +3,7 @@ import {ListeLigneService} from '../liste-ligne.service';
 import {Ligne} from '../model/Ligne';
 import {AlertTrafic} from '../model/AlertTrafic';
 import {FilterPipe} from './filterLigne.pipe';
-import {Observable} from 'rxjs/Rx';
-import {Observer} from 'rxjs/Rx';
+import {ListligneServiceService} from './listligne-service.service';
 
 
 @Component({
@@ -22,27 +21,15 @@ export class ListeLigneComponent implements OnInit {
   changeLigne : EventEmitter<Ligne> = new EventEmitter();
   @Input('listAlert')
   listAlert : AlertTrafic[]; 
-  observable : Observable<string>;
 
-  constructor(private ligneService : ListeLigneService) { 
-    
-    this.observable = new Observable((observer) => {
-        observer.next();
-      } 
-    );
-  }
+  constructor(private ligneService : ListeLigneService, private ligneServiceObs : ListligneServiceService) { }
 
   ngOnInit() {
     this.ligneService.getLignes().subscribe(res => this.listeLigne = res);    
   }
 
   onSelectLigne(ligne : Ligne) : void {
-
-    this.observable.subscribe(() => {
-      console.log("Clique");
-    });
-    
-    this.changeLigne.emit(ligne);
+    this.ligneServiceObs.selectLigne(ligne);
     this.selectLigne = ligne;
   }
 

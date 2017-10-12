@@ -1,25 +1,25 @@
   
-  <amexio-tab-pane [closable]="false">
+<div class="ligne">
+  <app-liste-ligne [listAlert]="listAlert"  #listeligne></app-liste-ligne>
+</div>
+
+<amexio-tab-pane [closable]="false">
     <amexio-tab title="Incident" [active]=true>
       <div class="conteneurIncident">
-        <div class="ligne">
-            <app-liste-ligne [listAlert]="listAlert" (changeLigne)="changeLigne($event)" #listeligne></app-liste-ligne>
-        </div>
-
         <div class="content">
-            <app-alert-trafic-list  class="contentlistincident" [selectLigne]="selectLigne" (loadListAlert)="loadListAlert($event)" (changeAlert)="changeAlert($event)"></app-alert-trafic-list>
+            <app-alert-trafic-list  class="contentlistincident" (loadListAlert)="loadListAlert($event)" (changeAlert)="changeAlert($event)"></app-alert-trafic-list>
             <app-alert-trafic-detail class="contentdetail"  [selectAlertTrafic]="selectAlert"></app-alert-trafic-detail>
         </div>
 
         <br/>
-        <div class="footer" *ngIf="selectLigne">
-              <b>{{selectLigne.nomlong}}</b>
-              <button text="test" (click)="listeligne.clickWithReference()">test</button>
-         </div>
       </div>
     </amexio-tab>
 
-    <amexio-tab title="Recherche">
+    <amexio-tab title="Créer incident">
+      <app-create-incident></app-create-incident>
+    </amexio-tab>
+
+    <amexio-tab title="Ligne controle">
       <app-ligne-control></app-ligne-control>
     </amexio-tab>    
 

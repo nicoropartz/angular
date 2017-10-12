@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { NgModule  } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -16,6 +16,22 @@ import { ListeLigneComponent } from './liste-ligne/liste-ligne.component';
 import { RechercheComponent } from './recherche/recherche.component';
 import { LigneControlComponent } from './ligne-control/ligne-control.component';
 import { LigneDetailComponent } from './ligne-detail/ligne-detail.component';
+import { CreateIncidentComponent } from './create-incident/create-incident.component';
+import { RouterModule, Routes} from '@angular/router';
+
+
+const appRoutes : Routes = [
+  { path : 'ligne-control', component : LigneControlComponent },
+  { path : 'ligne-create', component : CreateIncidentComponent },
+  { path: '',
+    redirectTo: '/heroes',
+    pathMatch: 'full'
+  },
+  {
+    path:'**', component : CreateIncidentComponent
+  }
+];
+  
 
 
 @NgModule({
@@ -29,12 +45,15 @@ import { LigneDetailComponent } from './ligne-detail/ligne-detail.component';
     ListeLigneComponent,
     RechercheComponent,
     LigneControlComponent,
-    LigneDetailComponent
+    LigneDetailComponent,
+    CreateIncidentComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes, {enableTracing : true}),
     BrowserModule,
     FormsModule,
     AmexioWidgetModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [FilterPipe],

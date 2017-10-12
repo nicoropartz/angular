@@ -26,4 +26,9 @@ export class LigneDetailComponent implements OnInit {
     this.nbrIncident = 0;
   }
 
+  stopLine() {
+    this.status = "stop";
+    this.ligneControlService.stopOne(true);
+  }
+
 }

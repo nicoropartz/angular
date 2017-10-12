@@ -1,0 +1,26 @@
+<form [formGroup]="incidentForm">
+    
+      Couleur ligne : <input type="text" formControlName="couleurligne">
+      
+      Couleur texte ligne : <input type="text" formControlName="couleurtexteligne">
+      
+      Nom court : <input type="text" formControlName="nomcourt">
+      
+      Nom long : <input type="text" formControlName="nomlong">
+      
+      Id : <input type="text" formControlName="id">
+      
+      <div formArrayName="bus">
+            <div *ngFor="let itemBus of bus; let i=index" [formGroupName]="i" >
+                   <input type="text" formControlName="numero">
+            </div>
+      </div>
+
+      <div>
+            <a routerLink="/ligne-create" routerLinkActive="active">Create</a>
+            <a routerLink="/ligne-control" routerLinkActive="active">Ligne controle</a>
+            <router-outlet></router-outlet>
+      </div>
+      
+</form>
+
